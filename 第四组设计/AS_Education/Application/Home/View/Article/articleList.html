@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+<html>
+   <!-- create by 陈汉林 -->
+   <!-- test.js create by 陈汉林 -->
+   <!-- articleList.css create by 胡康泽 -->
+ <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" name="viewport">
+        <title>
+            文章列表
+        </title>
+                <link href="__PUBLIC__/css/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+                 <link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css">  </link>        
+                <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/articleList.css"></link>
+                <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/searchform.css">
+                <script src="__PUBLIC__/js/bootstrap.min.js" type="text/javascript">
+                </script>
+                <script src="__PUBLIC__/js/jquery.min.js" type="text/javascript">
+                </script>
+                <script type="text/javascript" src="__PUBLIC__/js/searchform.js"></script>
+                <script type="text/javascript" src="__PUBLIC__/js/test.js"></script>
+              
+    </head>
+     <include file="Public:header" />
+                <div class="section clearfix">
+                    <div class="headline">
+                        <div class="title">
+                            今日头条
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">
+                                    小学生打架
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    小学生打架
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    小学生打架
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    小学生打架
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    小学生打架
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    小学生打架
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                     小学生打架
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <volist name="data" id="id">
+                        <div class="chapter">
+                        <div class="picture">
+                            <img src="{$id.article_img}" width="300px;">
+                            </img>
+                        </div>
+                        <div class="detail">
+                            <div class="title">
+                               <a href="__APP__/Article/articleDetail/id/{$id.id}">{$id.article_title}</a>
+                            </div>
+                           <div class="datetime">
+                                发布时间：  {$data.publish_time|date="Y-m-d H:i:s",###} 
+                            </div>
+                            <p class="content">
+                                {$id.article_content|substr=0,96}
+                            </p>
+                        </div>
+                    </div>
+                    </volist>
+
+                </div>
+                <div class="page-number">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="disabled">
+                                <a href="#">
+                                    «
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="#">
+                                    1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    3
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    4
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    5
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    ...
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    »
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                   <!--end .page-number-->
+           
+
+<include file="Public:footer" />
+</html>

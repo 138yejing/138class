@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <!-- create by 谭发新 -->
+    <!-- articleDetail.css create by 谭发新 -->
+ <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" name="viewport">
+        <title>
+            文章列表
+        </title>
+                <link href="__PUBLIC__/css/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+                <script src="__PUBLIC__/js/bootstrap.min.js" type="text/javascript">
+                </script>
+                <script src="__PUBLIC__/js/jquery.min.js" type="text/javascript">
+                </script>
+                <link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css">  </link>        
+               <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/articleDetail.css">
+                  <script type="text/javascript" src="__PUBLIC__/js/test.js"></script>
+              
+    </head>
+     <include file="Public:header" />
+                
+                <div class="main">
+                    <h1>
+                       
+                        {$data.article_title}
+                    </h1>
+                    <div class="datetime">
+                        <p>
+                            发布时间：
+                            {$data.publish_time|date="Y-m-d H:i:s",###} 
+                        </p>
+                    </div>
+                    <div class="content">
+                        <img src="__PUBLIC__/images/test.jpg">
+                            <div>
+                                <p>
+                                {$data.article_content}
+                                   
+                                </p>
+                            </div>
+                        </img>
+                    </div>
+                </div>
+                <!--end .main-->
+      <include file="Public:footer" />
+      <!-- js create by 梁灏议 -->
+      <script type="text/javascript">
+            document.querySelector(".search").style.display = "none";
+        </script>
+</html>

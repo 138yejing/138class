@@ -1,0 +1,32 @@
+.main{
+    position: relative;
+    width: 100%;
+    padding: 0 10%;
+    margin:0 auto;
+}
+.main h1{
+    text-align: center;
+}
+.main .datetime{
+}
+.main .datetime p{
+    float: right;
+    color:  #A9A9A9;
+   font-weight: bolder;
+   font-size: 1em;
+}
+.main .content{  
+    clear: right;
+    border-top:1px solid #cccccc; 
+    margin-top: 35px;  
+    text-align: center;
+    width: 100%;
+}
+.main .content img{
+   margin:0 auto;
+   padding: 10px 0;
+}
+
+.main .content div p:first-child{
+    margin-top: 10px;
+}
