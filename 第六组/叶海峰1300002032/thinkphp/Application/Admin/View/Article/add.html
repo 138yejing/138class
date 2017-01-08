@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public/san/header.html"/>
+
+<div class="cantainer" align="center">
+		
+	<form action="{:U('Article/add_article')}" enctype="multipart/form-data" method="post">
+		<div class = "form-group">
+			文章标题：
+            <input type="text" name="add_title">
+            <input type="submit" class="btn btn-success" value="添加" >
+		</div>
+		<div class = "form-group html_thumb" >
+			缩略图：
+			<input type="file" id="input-file-now" class="dropify" name="thumb" />
+
+		</div>
+
+		<div>
+         内容: <textarea class="text_area" name="article_content" id="editor"></textarea>
+		</div>
+	</form>
+</div>
+</body>
+<script type="text/javascript">
+window.UEDITOR_HOME_URL = "/__PUBLIC__/lib/utf8-php/";
+var ue = UE.getEditor('editor');  
+$('.dropify').dropify();
+</script>
+
+<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="__PUBLIC__/lib/dropify/dist/js/dropify.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Basic
+        $('.dropify').dropify();
+
+        // Translated
+        $('.dropify-fr').dropify({
+            messages: {
+                default: 'Glissez-déposez un fichier ici ou cliquez',
+                replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                remove:  'Supprimer',
+                error:   'Désolé, le fichier trop volumineux'
+            }
+        });
+
+        // Used events
+        var drEvent = $('#input-file-events').dropify();
+
+        drEvent.on('dropify.beforeClear', function(event, element){
+            return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+        });
+
+        drEvent.on('dropify.afterClear', function(event, element){
+            alert('File deleted');
+        });
+
+        drEvent.on('dropify.errors', function(event, element){
+            console.log('Has Errors');
+        });
+
+        var drDestroy = $('#input-file-to-destroy').dropify();
+        drDestroy = drDestroy.data('dropify')
+        $('#toggleDropify').on('click', function(e){
+            e.preventDefault();
+            if (drDestroy.isDropified()) {
+                drDestroy.destroy();
+            } else {
+                drDestroy.init();
+            }
+        })
+    });
+</script>
+</html>

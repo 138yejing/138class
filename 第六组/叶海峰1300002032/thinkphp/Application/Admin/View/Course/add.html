@@ -1,0 +1,68 @@
+<include file="Public/san/header.html"/>
+
+<div class="container">
+    <input name="name" type="button" onClick="show();" value="显示">
+    <div id="div" style="display: none" onMouseout="hidden();">
+    show it
+    </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>课程分类</th>
+      <th>课程名称</th>
+      <th>创建者</th>
+      <th>学员</th>
+      <th>点击量</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+
+    <foreach name="list"  item="list_i">
+        <tr>
+          <th>{$list_i['cour']}</th>
+          <th>{$list_i['courname']}</th>
+          <th>{$list_i['creator']}</th>
+          <th>{$list_i['stunum']}</th>
+          <th>{$list_i['clirate']}</th>
+          <th>{$list_i['status']}</th>
+          
+          <th>
+            <a href="">查看</a>
+            |
+            <a href="{:U('Course/shoose',array('id'=>$list_i['id'],'courname'=>$list_i['courname']))}">添加</a>
+            
+          </th>
+        </tr>
+      </foreach>
+  </tbody>
+</table>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" align="center">
+      {$page}
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+</div>  
+</body>
+<script>
+
+function show(){
+document.getElementById("div").style.display="";
+//alert(document.getElementById("div").style.display)
+}
+function hidden(){
+document.getElementById("div").style.display="none";
+//alert(document.getElementById("div").style.display)
+}
+</script>
+</html>
+
+
+
+
