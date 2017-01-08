@@ -1,0 +1,123 @@
+<!DOCTYPE HTML> 
+<html> 
+
+<head> 
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/> 
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+<title>注册</title> 
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" href="css/style2.css">  
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript"> 
+document.createElement("section"); 
+document.createElement("header");  
+document.createElement("footer"); 
+</script> 
+</head> 
+ 
+<body> 
+
+<div class="top">
+        <span>在线教育，让学生不在学习和工作烦恼</span>
+        <div class="account clearfix">
+            <a class="login">登录</a>
+            <a class="register">注册</a>
+        </div>
+    </div>
+    <div class="header clearfix">
+        <div class="logo">
+            <img src="./img/logo.png">
+        </div>
+        <div class="search">
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-addon">搜索</span>
+            </div>
+        </div>
+    </div>
+    <div class="navigator clearfix">
+        <ul class="nav nav-pills nav-justified" role="tablist">
+          <li role="presentation" class="active"><a href="#">首页</a></li>
+          <li role="presentation"><a href="#">课程列表</a></li>
+          <li role="presentation" ><a href="#">文章列表</a></li>
+          <li role="presentation"><a href="#">社区中心</a></li>
+        </ul>
+    </div>
+<div class="centont">
+<div class="wrap"> 
+  <form action="#" method="post"> 
+    <section class="registerForm "> 
+      <header> 
+        <h1>欢迎加入澳视教育</h1> 
+      </header> 
+      <div class="registerForm _content"> 
+        <fieldset> 
+		 <div class="inputWrap"> 
+            <input type="text" id="userName" placeholder="昵称" pattern="^[A-Za-z0-9]+$" required oninput="check(this,'您输入的昵称格式不正确')"> 
+          </div> 
+		  <div class="bian">昵称由数字和英文字母组成</div>
+          <div class="inputWrap"> 
+            <input type="text" id="txtEmail" placeholder="邮箱" pattern="^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$" required oninput="check(this,'您输入的邮箱格式不正确')"> 
+          </div> 
+		   <div class="bian">邮箱注册必须包含@字符</div>
+          <div class="inputWrap"> 
+            <input type="password" id="txtPwd" placeholder="请输入密码" pattern="^[a-zA-Z]\w{5,17}$" required oninput="check(this,'您输入的密码格式不正确')" > 
+          </div> 
+		  <div class="bian">密码以字母开头，可由英文、数字及下划线组成6-18个字符</div>
+        <fieldset> 
+          <div align="center">
+            <input  type="submit" value="注册"> 
+            </div>
+        </fieldset> 
+      </div> 
+    </section> 
+  </form> 
+</div> 
+</div>
+<div class="clearfix"></div>
+    <div class="light-green-background">
+        <div class="container">
+            <div class="row">
+                <div style="width: 100%; padding: 0 10%;">
+                    <div class="span3 offset1" style="color:#FFF;">
+                        <h3>关于我们</h3>
+                        <p>这是一个爱学习的人</p>
+                        <p>免费探索兴趣爱好的网站</p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>联系合作</h3>
+                        <p><a style="color:#FFF;" href="#">联系我们</a></p>
+                        <p><a style="color:#FFF;" href="#">合作方式</a></p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>关注我们</h3>
+                        <p><a style="color:#FFF;" href="#">微博</a></p>
+                        <p><a style="color:#FFF;" href="#">微信</a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="green-background">
+        <div class="container">
+            <div class="row">
+                <div class="span11 offset1">
+                    <div style="padding:15px 0;color:white; text-align: center;">粤ICP备138666666号 &nbsp;&nbsp;&nbsp; Copyright © 138class </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+	function check(i,tip){
+		if(i.validity.patternMismatch === true){
+			i.setCustomValidity(tip);
+		}else{
+			i.setCustomValidity("");
+		}
+	}
+</script>
+</body> 
+</html>

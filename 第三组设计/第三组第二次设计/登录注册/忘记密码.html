@@ -1,0 +1,142 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/> 
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+<title>忘记密码</title>
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" type="text/javascript" href="C:\Users\Administrator\Desktop\登录\style/jquerymin.js">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="top">
+        <span>在线教育，让学生不在学习和工作烦恼</span>
+        <div class="account clearfix">
+            <a class="login">登录</a>
+            <a class="register">注册</a>
+        </div>
+    </div>
+    <div class="header clearfix">
+        <div class="logo">
+            <img src="./img/logo.png">
+        </div>
+        <div class="search">
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-addon">搜索</span>
+            </div>
+        </div>
+    </div>
+    <div class="navigator clearfix">
+        <ul class="nav nav-pills nav-justified" role="tablist">
+          <li role="presentation" class="active"><a href="#">首页</a></li>
+          <li role="presentation"><a href="#">课程列表</a></li>
+          <li role="presentation" ><a href="#">文章列表</a></li>
+          <li role="presentation"><a href="#">社区中心</a></li>
+        </ul>
+    </div>
+	<div class="centont">
+	<div class="wrap"> 
+  	<form action="#" method="post"> 
+    	<section class="loginForm"> 
+      	<header> 
+        	<h1>找回密码</h1> 
+      	</header> 
+      	<div class="loginForm_content"> 
+        	<fieldset> 
+          		<div class="inputWrap"> 
+            		<input type="text" name="userName" placeholder="邮箱/手机号" autofocus required> 
+          		</div> 
+          	</fieldset>
+        <div> 
+          	<a href="javascript:;" class="send1" onclick="sends.send();"> 
+         	  <fieldset> 
+         			<input type="submit" value="发送验证码"> </a></div></fieldset>
+          		<fieldset>
+         			<div class="inputWrap"> 
+            			<input type="password" name="password" placeholder="请输入验证码" required> 
+         			</div>
+         		</fieldset> 
+          	  </fieldset> 
+          	  <fieldset> 
+          			<a href="#"><input type="submit" value="确定"> </a> 
+        	  </fieldset>
+        </div>
+        </section> 
+    </form> 
+    </div> 
+    </div> 
+       <div class="clearfix"></div>
+       <div class="light-green-background">
+        <div class="container">
+            <div class="row">
+                <div style="width: 100%; padding: 0 10%;">
+                    <div class="span3 offset1" style="color:#FFF;">
+                        <h3>关于我们</h3>
+                        <p>这是一个爱学习的人</p>
+                        <p>免费探索兴趣爱好的网站</p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>联系合作</h3>
+                        <p><a style="color:#FFF;" href="#">联系我们</a></p>
+                        <p><a style="color:#FFF;" href="#">合作方式</a></p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>关注我们</h3>
+                        <p><a style="color:#FFF;" href="#">微博</a></p>
+                        <p><a style="color:#FFF;" href="#">微信</a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="green-background">
+        <div class="container">
+            <div class="row">
+                <div class="span11 offset1">
+                    <div style="padding:15px 0;color:white; text-align: center;">粤ICP备138666666号 &nbsp;&nbsp;&nbsp; Copyright © 138class </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+var sends = {
+	checked:1,
+	send:function(){
+			var numbers = /^1\d{10}$/;
+			var val = $('#phone').val().replace(/\s+/g,""); //获取输入手机号码
+			if($('.div-phone').find('span').length == 0 && $('.div-phone a').attr('class') == 'send1'){
+				if(!numbers.test(val) || val.length ==0){
+					$('.div-phone').append('<span class="error">手机格式错误</span>');
+					return false;
+				}
+			}
+			if(numbers.test(val)){
+				var time = 30;
+				$('.div-phone span').remove();
+				function timeCountDown(){
+					if(time==0){
+						clearInterval(timer);
+						$('.div-phone a').addClass('send1').removeClass('send0').html("发送验证码");
+						sends.checked = 1;
+						return true;
+					}
+					$('.div-phone a').html(time+"S后再次发送");
+					time--;
+					return false;
+					sends.checked = 0;
+				}
+				$('.div-phone a').addClass('send0').removeClass('send1');
+				timeCountDown();
+				var timer = setInterval(timeCountDown,1000);
+			}
+	}
+}
+</script>
+
+</html>
