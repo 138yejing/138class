@@ -27,9 +27,38 @@
 	<link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/liu/css/viewstyle.css" /> 
 	<link rel="stylesheet" type="text/css" href="/thinkphp_3.2.3_full/Public/liu/css/style.css" /> 
 
-	<!-- 缩略图预览插件 -->
+	
+<!-- 缩略图预览插件 -->
 <link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/lib/dropify/dist/css/demo.css">
 <link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/lib/dropify/dist/css/dropify.min.css">
+<!-- 富文本插件 -->
+<script type="text/javascript" charset="utf-8" src="/thinkphp_3.2.3_full/Public/lib/utf8-php/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/thinkphp_3.2.3_full/Public/lib/utf8-php/ueditor.all.min.js"> </script>
+<style type="text/css">
+.text_area{width: 500px; height: 300px;}
+.html_thumb{width: 500px;}
+</style>
+<!--弹幕
+<style>
+    .video_content_box{position: relative;    width: 500px;}
+    .video_box{position: absolute;}
+    .content_box{    position: absolute;
+    z-index: 999;
+    color: #fff;
+    top: 110px;
+    right: 0;
+    animation:right_left 2s linear infinite;//动画
+    }
+    
+    /*理解成动画的帧*/
+    @keyframes right_left{
+        0%{right: 0}
+        50%{right: 50%}
+        100%{right: 100%}
+
+    }
+</style>
+-->
 </head>
 <body>
 <div class="top">
@@ -42,15 +71,19 @@
 </div>
 <div class="header clearfix">
 	<div class="logo">
-		<img src="/thinkphp_3.2.3_full/Public/san/img/logo.png">
+		<a href="<?php echo U('Home/Article/index');?>"><img src="/thinkphp_3.2.3_full/Public/san/img/logo.png"></a>
 	</div>
 	<div class="search">
+        <form method="get" action="<?php echo U('Home/Article/index',array('do'=>'search'));?>">
 		<div class="input-group">
-			<input type="text" class="form-control">
-			<span class="input-group-addon">搜索</span>
+			<input type="text" class="form-control" name="keywrod" placeholder="请输入文章关键词">
+
+			<span class="input-group-addon"><input type="submit" style="background-color: #0AAC87;border: 0"  value="搜索"></span>
 		</div>
+        </form>
 	</div>
 </div>
+
 <div class="navigator clearfix">
 	<ul class="nav nav-pills nav-justified" role="tablist">
 	  <li role="presentation" class="active"><a href="<?php echo U('home/index/index');?>">首页</a></li>
@@ -114,68 +147,26 @@
     <div id="list"> 
 	     <div id="list-title"> 
 	      <ul class="list-unstyled"> 
-	       <li><h4>课时1 梁牛:低成本营销方法论</h4></li> 
+	       <li><h4><?php echo ($my_cour); ?></h4></li> 
 	      </ul> 
 	     </div> 
-	     <div class="pull-left" id="list-box"> 
+	     <?php if(is_array($list)): foreach($list as $key=>$list): ?><div class="pull-left" id="list-box"> 
 	      <!--子课时列表开始--> 
 		      <a href="#view_id.html"> 
 			       <ul class="list-unstyled pull-left" id="list-content"> 
 			        <span class="glyphicon glyphicon-play-circle pull-left"></span> 
-			        <li class="pull-left lcon"><h5>梁牛:低成本营销方法论（上）</h5></li> 
-			        <li class="pull-right rcon"><h5>44浏览</h5></li> 
+			        <a href="<?php echo U('Course/video',$list);?>" >
+			        	<li class="pull-left lcon"><h5><?php echo ($list['courname']); ?></h5></li>
+			        </a>
+			        <li class="pull-right rcon"><h5><?php echo ($list['clirate']); ?> 浏览</h5></li> 
 			       </ul> 
-		       </a> 
-	      <!--子课时列表开始--> 
-		      <a href="#view_id.html"> 
-			       <ul class="list-unstyled pull-left" id="list-content"> 
-			        	<span class="glyphicon glyphicon-play-circle pull-left"></span> 
-				        <li class="pull-left lcon"><h5>梁牛:低成本营销方法论（下）</h5></li> 
-				        <li class="pull-right rcon"><h5>44浏览</h5></li> 
-			       </ul> 
-		       </a> 
-	     </div> 
+		       </a> 	      
+	     </div><?php endforeach; endif; ?> 
     </div> 
+    
     <!--课程列表结束--> 
-    <div id="list"> 
-	     <div id="list-title"> 
-		      <ul class="list-unstyled"> 
-		       <li><h4>课时2 梁牛:低成本营销方法论</h4></li> 
-		      </ul> 
-	     </div> 
-	     <div class="pull-left" id="list-box"> 
-		      <a href="#view_id.html"> 
-			       <ul class="list-unstyled pull-left" id="list-content"> 
-				        <span class="glyphicon glyphicon-play-circle pull-left"></span> 
-				        <li class="pull-left lcon"> <h5>梁牛:低成本营销方法论</h5></li> 
-				        <li class="pull-right rcon"><h5>44浏览</h5></li> 
-			       </ul> 
-		       </a> 
-	     </div> 
-    </div> 
-    <div id="list"> 
-	     <div id="list-title"> 
-		      <ul class="list-unstyled"> 
-		       		<li><h4>课时3 开启你的主动人生</h4></li> 
-		      </ul> 
-	     </div> 
-	     <div class="pull-left" id="list-box"> 
-		      <a href="#view_id.html"> 
-			       <ul class="list-unstyled pull-left" id="list-content"> 
-			        <span class="glyphicon glyphicon-play-circle pull-left"></span> 
-			        <li class="pull-left lcon"><h5> [霸王课]程颢-开启你的主动人生（上）</h5></li> 
-			        <li class="pull-right rcon"><h5>44浏览</h5></li> 
-			       </ul> 
-		       </a> 
-		      <a href="#view_id.html"> 
-			       <ul class="list-unstyled pull-left" id="list-content"> 
-			        <span class="glyphicon glyphicon-play-circle pull-left"></span> 
-			        <li class="pull-left lcon"><h5> [霸王课]程颢-开启你的主动人生（下）</h5></li> 
-			        <li class="pull-right rcon"><h5>44浏览</h5></li> 
-			       </ul> 
-		       </a> 
-	     </div> 
-    </div> 
+    
+    
    </div> 
    <!--right-box--> 
 	<div class="pull-right" id="right-box"> 
@@ -189,7 +180,7 @@
 		     </div> 
 		     <div class="panel-body"> 
 			      <ul class="list-unstyled" id="list-box"> 
-			       <li>没有找到数据</li> 
+			       <li>周三把作业提交一下！</li> 
 			      </ul> 
 		     </div> 
 	    </div> 
@@ -204,9 +195,7 @@
 		 </div> 
 	 <div class="panel-body" id="online-user"> 
 		  <ul class="list-unstyled" id="user"> 
-		   <a href="#"><li><img src="/thinkphp_3.2.3_full/Public/liu/img/11.jpg" class="img-circle" />张小明</li></a> 
-		   <a href="#"><li><img src="/thinkphp_3.2.3_full/Public/liu/img/11.jpg" class="img-circle" />李小猪</li></a> 
-		   <a href="#"><li><img src="/thinkphp_3.2.3_full/Public/liu/img/11.jpg" class="img-circle" />胡小凯</li></a> 
+		  <?php if(is_array($users)): foreach($users as $key=>$users): ?><a href="#"><li><img src="/thinkphp_3.2.3_full/Public/liu/img/11.jpg" class="img-circle" /><?php echo ($users['username']); ?></li></a><?php endforeach; endif; ?>
 		  </ul> 
 	 </div> 
 	</div> 

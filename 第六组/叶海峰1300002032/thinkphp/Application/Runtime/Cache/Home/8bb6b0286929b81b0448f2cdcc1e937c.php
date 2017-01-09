@@ -27,6 +27,7 @@
 	<link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/liu/css/viewstyle.css" /> 
 	<link rel="stylesheet" type="text/css" href="/thinkphp_3.2.3_full/Public/liu/css/style.css" /> 
 
+
 <!-- 缩略图预览插件 -->
 <link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/lib/dropify/dist/css/demo.css">
 <link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/lib/dropify/dist/css/dropify.min.css">
@@ -49,7 +50,7 @@
 </div>
 <div class="header clearfix">
 	<div class="logo">
-		<img src="/thinkphp_3.2.3_full/Public/san/img/logo.png">
+		<a href="<?php echo U('Home/Article/index');?>"><img src="/thinkphp_3.2.3_full/Public/san/img/logo.png"></a>
 	</div>
 	<div class="search">
 		<div class="input-group">
@@ -82,5 +83,42 @@
 <script type="text/javascript">
 	
 </script>	
+<div class="light-green-background">
+        <div class="container">
+            <div class="row">
+                <div style="width: 100%; padding: 0 10%;">
+                    <div class="span3 offset1" style="color:#FFF;">
+                        <h3>关于我们</h3>
+                        <p>这是一个爱学习的人</p>
+                        <p>免费探索兴趣爱好的网站</p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>联系合作</h3>
+                        <p><a style="color:#FFF;" href="#">联系我们</a></p>
+                        <p><a style="color:#FFF;" href="#">合作方式</a></p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>关注我们</h3>
+                        <p><a style="color:#FFF;" href="#">微博</a></p>
+                        <p><a style="color:#FFF;" href="#">微信</a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="green-background">
+        <div class="container">
+            <div class="row">
+                <div class="span11 offset1">
+                    <div style="padding:15px 0;color:white; text-align: center;">粤ICP备138666666号 &nbsp;&nbsp;&nbsp; Copyright © 138class </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript"></script>
+    <script src="/thinkphp_3.2.3_full/Public/san/js/jquery.min.js"></script>
+    <script src="/thinkphp_3.2.3_full/Public/san/js/jquery.zySlide.js"></script>
+    <script src="/thinkphp_3.2.3_full/Public/san/js/index.js"></script>
 </body>
 </html>

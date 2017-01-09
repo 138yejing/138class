@@ -27,6 +27,7 @@
 	<link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/liu/css/viewstyle.css" /> 
 	<link rel="stylesheet" type="text/css" href="/thinkphp_3.2.3_full/Public/liu/css/style.css" /> 
 
+	
 <!-- 缩略图预览插件 -->
 <link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/lib/dropify/dist/css/demo.css">
 <link rel="stylesheet" href="/thinkphp_3.2.3_full/Public/lib/dropify/dist/css/dropify.min.css">
@@ -37,6 +38,27 @@
 .text_area{width: 500px; height: 300px;}
 .html_thumb{width: 500px;}
 </style>
+<!--弹幕
+<style>
+    .video_content_box{position: relative;    width: 500px;}
+    .video_box{position: absolute;}
+    .content_box{    position: absolute;
+    z-index: 999;
+    color: #fff;
+    top: 110px;
+    right: 0;
+    animation:right_left 2s linear infinite;//动画
+    }
+    
+    /*理解成动画的帧*/
+    @keyframes right_left{
+        0%{right: 0}
+        50%{right: 50%}
+        100%{right: 100%}
+
+    }
+</style>
+-->
 </head>
 <body>
 <div class="top">
@@ -49,30 +71,34 @@
 </div>
 <div class="header clearfix">
 	<div class="logo">
-		<img src="/thinkphp_3.2.3_full/Public/san/img/logo.png">
+		<a href="<?php echo U('Home/Article/index');?>"><img src="/thinkphp_3.2.3_full/Public/san/img/logo.png"></a>
 	</div>
 	<div class="search">
+        <form method="get" action="<?php echo U('Home/Article/index',array('do'=>'search'));?>">
 		<div class="input-group">
-			<input type="text" class="form-control">
-			<span class="input-group-addon">搜索</span>
+			<input type="text" class="form-control" name="keywrod" placeholder="请输入文章关键词">
+
+			<span class="input-group-addon"><input type="submit" style="background-color: #0AAC87;border: 0"  value="搜索"></span>
 		</div>
+        </form>
 	</div>
 </div>
+
 
 <div class="navigator clearfix">
   <ul class="nav nav-pills nav-justified" role="tablist">
     <li role="presentation" class="active"><a href="<?php echo U('home/index/index');?>">首页</a></li>
     <li role="presentation" ><a href="<?php echo U('home/course/index');?>">课程列表</a></li>
     <li role="presentation" ><a href="<?php echo U('home/article/index');?>">文章列表</a></li>
-    <li role="presentation" ><a href="#">社区中心</a></li>
+    <li role="presentation" ><a href="#">社区中心</a></li>    
   </ul>
 </div>
 <div class="container">
+<div class="row col-md-12" align="right">
+  <a href="<?php echo U('Admin/Article/add');?>">添加文章</a>
+  <a href="<?php echo U('Admin/Course/add',array('user_id'=>$user_id));?>">添加课程</a>
+</div>
 <table class="table">
-    <div class="col-md-6" align="left">
-    <a href="<?php echo U('Admin/Article/add');?>">添加文章</a>
-    <a href="<?php echo U('Admin/Course/add',array('user_id'=>$user_id));?>">添加课程</a>
-    </div>
     
   <thead>
     <tr>
@@ -107,8 +133,46 @@
   </div>
 
 </div>	
-</body>
+
 <script src="/thinkphp_3.2.3_full/Public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/thinkphp_3.2.3_full/Public/js/jquery.1.11.1.min.js"></script>
+<div class="light-green-background">
+        <div class="container">
+            <div class="row">
+                <div style="width: 100%; padding: 0 10%;">
+                    <div class="span3 offset1" style="color:#FFF;">
+                        <h3>关于我们</h3>
+                        <p>这是一个爱学习的人</p>
+                        <p>免费探索兴趣爱好的网站</p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>联系合作</h3>
+                        <p><a style="color:#FFF;" href="#">联系我们</a></p>
+                        <p><a style="color:#FFF;" href="#">合作方式</a></p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>关注我们</h3>
+                        <p><a style="color:#FFF;" href="#">微博</a></p>
+                        <p><a style="color:#FFF;" href="#">微信</a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="green-background">
+        <div class="container">
+            <div class="row">
+                <div class="span11 offset1">
+                    <div style="padding:15px 0;color:white; text-align: center;">粤ICP备138666666号 &nbsp;&nbsp;&nbsp; Copyright © 138class </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script type="text/javascript"></script>
+    <script src="/thinkphp_3.2.3_full/Public/san/js/jquery.min.js"></script>
+    <script src="/thinkphp_3.2.3_full/Public/san/js/jquery.zySlide.js"></script>
+    <script src="/thinkphp_3.2.3_full/Public/san/js/index.js"></script>
+</body>
 </html>

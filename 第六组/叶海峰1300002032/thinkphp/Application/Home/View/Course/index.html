@@ -62,68 +62,28 @@
     <div id="list"> 
 	     <div id="list-title"> 
 	      <ul class="list-unstyled"> 
-	       <li><h4>课时1 梁牛:低成本营销方法论</h4></li> 
+	       <li><h4>{$my_cour}</h4></li> 
 	      </ul> 
 	     </div> 
+	     <foreach name="list" item="list">
 	     <div class="pull-left" id="list-box"> 
 	      <!--子课时列表开始--> 
 		      <a href="#view_id.html"> 
 			       <ul class="list-unstyled pull-left" id="list-content"> 
 			        <span class="glyphicon glyphicon-play-circle pull-left"></span> 
-			        <li class="pull-left lcon"><h5>梁牛:低成本营销方法论（上）</h5></li> 
-			        <li class="pull-right rcon"><h5>44浏览</h5></li> 
+			        <a href="{:U('Course/video',$list)}" >
+			        	<li class="pull-left lcon"><h5>{$list['courname']}</h5></li>
+			        </a>
+			        <li class="pull-right rcon"><h5>{$list['clirate']} 浏览</h5></li> 
 			       </ul> 
-		       </a> 
-	      <!--子课时列表开始--> 
-		      <a href="#view_id.html"> 
-			       <ul class="list-unstyled pull-left" id="list-content"> 
-			        	<span class="glyphicon glyphicon-play-circle pull-left"></span> 
-				        <li class="pull-left lcon"><h5>梁牛:低成本营销方法论（下）</h5></li> 
-				        <li class="pull-right rcon"><h5>44浏览</h5></li> 
-			       </ul> 
-		       </a> 
-	     </div> 
+		       </a> 	      
+	     </div>
+	     </foreach> 
     </div> 
+    
     <!--课程列表结束--> 
-    <div id="list"> 
-	     <div id="list-title"> 
-		      <ul class="list-unstyled"> 
-		       <li><h4>课时2 梁牛:低成本营销方法论</h4></li> 
-		      </ul> 
-	     </div> 
-	     <div class="pull-left" id="list-box"> 
-		      <a href="#view_id.html"> 
-			       <ul class="list-unstyled pull-left" id="list-content"> 
-				        <span class="glyphicon glyphicon-play-circle pull-left"></span> 
-				        <li class="pull-left lcon"> <h5>梁牛:低成本营销方法论</h5></li> 
-				        <li class="pull-right rcon"><h5>44浏览</h5></li> 
-			       </ul> 
-		       </a> 
-	     </div> 
-    </div> 
-    <div id="list"> 
-	     <div id="list-title"> 
-		      <ul class="list-unstyled"> 
-		       		<li><h4>课时3 开启你的主动人生</h4></li> 
-		      </ul> 
-	     </div> 
-	     <div class="pull-left" id="list-box"> 
-		      <a href="#view_id.html"> 
-			       <ul class="list-unstyled pull-left" id="list-content"> 
-			        <span class="glyphicon glyphicon-play-circle pull-left"></span> 
-			        <li class="pull-left lcon"><h5> [霸王课]程颢-开启你的主动人生（上）</h5></li> 
-			        <li class="pull-right rcon"><h5>44浏览</h5></li> 
-			       </ul> 
-		       </a> 
-		      <a href="#view_id.html"> 
-			       <ul class="list-unstyled pull-left" id="list-content"> 
-			        <span class="glyphicon glyphicon-play-circle pull-left"></span> 
-			        <li class="pull-left lcon"><h5> [霸王课]程颢-开启你的主动人生（下）</h5></li> 
-			        <li class="pull-right rcon"><h5>44浏览</h5></li> 
-			       </ul> 
-		       </a> 
-	     </div> 
-    </div> 
+    
+    
    </div> 
    <!--right-box--> 
 	<div class="pull-right" id="right-box"> 
@@ -137,7 +97,7 @@
 		     </div> 
 		     <div class="panel-body"> 
 			      <ul class="list-unstyled" id="list-box"> 
-			       <li>没有找到数据</li> 
+			       <li>周三把作业提交一下！</li> 
 			      </ul> 
 		     </div> 
 	    </div> 
@@ -152,9 +112,9 @@
 		 </div> 
 	 <div class="panel-body" id="online-user"> 
 		  <ul class="list-unstyled" id="user"> 
-		   <a href="#"><li><img src="__PUBLIC__/liu/img/11.jpg" class="img-circle" />张小明</li></a> 
-		   <a href="#"><li><img src="__PUBLIC__/liu/img/11.jpg" class="img-circle" />李小猪</li></a> 
-		   <a href="#"><li><img src="__PUBLIC__/liu/img/11.jpg" class="img-circle" />胡小凯</li></a> 
+		  <foreach name="users" item="users">
+		   		<a href="#"><li><img src="__PUBLIC__/liu/img/11.jpg" class="img-circle" />{$users['username']}</li></a> 
+		   	</foreach>
 		  </ul> 
 	 </div> 
 	</div> 

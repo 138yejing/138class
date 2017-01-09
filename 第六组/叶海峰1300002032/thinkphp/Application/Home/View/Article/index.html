@@ -1,18 +1,19 @@
 <include file="Public/san/header.html"/>
+
 <div class="navigator clearfix">
   <ul class="nav nav-pills nav-justified" role="tablist">
     <li role="presentation" class="active"><a href="{:U('home/index/index')}">首页</a></li>
     <li role="presentation" ><a href="{:U('home/course/index')}">课程列表</a></li>
     <li role="presentation" ><a href="{:U('home/article/index')}">文章列表</a></li>
-    <li role="presentation" ><a href="#">社区中心</a></li>
+    <li role="presentation" ><a href="#">社区中心</a></li>    
   </ul>
 </div>
 <div class="container">
+<div class="row col-md-12" align="right">
+  <a href="{:U('Admin/Article/add')}">添加文章</a>
+  <a href="{:U('Admin/Course/add',array('user_id'=>$user_id))}">添加课程</a>
+</div>
 <table class="table">
-    <div class="col-md-6" align="left">
-    <a href="{:U('Admin/Article/add')}">添加文章</a>
-    <a href="{:U('Admin/Course/add',array('user_id'=>$user_id))}">添加课程</a>
-    </div>
     
   <thead>
     <tr>
@@ -49,8 +50,46 @@
   </div>
 
 </div>	
-</body>
+
 <script src="__PUBLIC__/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery.1.11.1.min.js"></script>
+<div class="light-green-background">
+        <div class="container">
+            <div class="row">
+                <div style="width: 100%; padding: 0 10%;">
+                    <div class="span3 offset1" style="color:#FFF;">
+                        <h3>关于我们</h3>
+                        <p>这是一个爱学习的人</p>
+                        <p>免费探索兴趣爱好的网站</p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>联系合作</h3>
+                        <p><a style="color:#FFF;" href="#">联系我们</a></p>
+                        <p><a style="color:#FFF;" href="#">合作方式</a></p>
+                    </div>
+                    <div class="span3" style="color:#FFF;">
+                        <h3>关注我们</h3>
+                        <p><a style="color:#FFF;" href="#">微博</a></p>
+                        <p><a style="color:#FFF;" href="#">微信</a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="green-background">
+        <div class="container">
+            <div class="row">
+                <div class="span11 offset1">
+                    <div style="padding:15px 0;color:white; text-align: center;">粤ICP备138666666号 &nbsp;&nbsp;&nbsp; Copyright © 138class </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script type="text/javascript"></script>
+    <script src="__PUBLIC__/san/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/san/js/jquery.zySlide.js"></script>
+    <script src="__PUBLIC__/san/js/index.js"></script>
+</body>
 </html>

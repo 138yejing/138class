@@ -3,7 +3,7 @@ namespace Admin\Controller;
 use Think\Controller;
 use Think\Upload;
 use Common\Controller\AuthController;
-
+//课程部分 叶海峰 陈建斌 林伟武 苏华生
 class ArticleController extends AuthController{
 	public function index(){
         $this->display();

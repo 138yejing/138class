@@ -18,15 +18,18 @@ class LoginController extends Controller {
        if (empty($info)) {
            $this->error('用户名或密码错误',U('Login/index'));
        }else{
-
-         // session怎么保存信息？
         session("auth_info",$info);
+        $userD->where(array('ID' => $info['id']))->setField('status', 1);
         $this->success('登录成功！',U('Article/index',array('username'=>$username,'register'=>"设置",'id'=>$info['id'])));
        }
     }
     public function login_out()
     {
-      
+        //print_r(session('auth_info'));
+        
+        $userinfo = session('auth_info');
+        $userD=D('user_info');
+        $userD->where(array('ID' => $userinfo['id']))->setField('status', 0);
         session('auth_info',null);
         $this->success('退出成功！',U('Index/index'));
     }
