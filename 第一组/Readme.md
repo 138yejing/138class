@@ -12,5 +12,5 @@
 |mod_    |业务相关模块|
 
 # 注意事项
-1.需要先访问db_init.php文件初始化数据库并自动插入样例数据。
-2.访问page_login.php, 输入测试账号，用户名test，密码test，登录。自动跳转到用户中心page_ucenter.php。
+1. 需要先访问db_init.php文件初始化数据库并自动插入样例数据。
+2. 访问page_login.php, 输入测试账号，用户名test，密码test，登录。自动跳转到用户中心page_ucenter.php。
