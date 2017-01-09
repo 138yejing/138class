@@ -1,7 +1,7 @@
 <?php
 	namespace Home\Controller;
 	use Think\Controller;
-
+//简单的登录注册实现 叶海峰 陈建斌
 	class RegisterController extends Controller{
     	public function index(){
             $this->assign('login_username',"登陆");

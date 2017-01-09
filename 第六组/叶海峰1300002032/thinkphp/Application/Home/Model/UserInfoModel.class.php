@@ -1,6 +1,7 @@
 <?php 
 namespace Home\Model;
 use Think\Model;
+//简单的验证module实现 林伟武 苏华生
 class UserInfoModel extends Model
 {
 	protected $_validate = array(
