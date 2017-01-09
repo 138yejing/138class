@@ -59,9 +59,9 @@
     |:-----------|:---------- |:-----|:----|:--------|:-------------|
     |id          |int(10)     |NO    |PRI  |     |auto_increment|
     |username    |varchar(32) |NO    |     |         |              |
-    |password    |varchar(64) |NO    |     |         |              |
+    |password    |varchar(32) |NO    |     |         |              |
     |nickname    |varchar(32) |NO    |     |         |              |
-    |email       |varchar(64) |NO    |     |         |              |
+    |email       |varchar(32) |NO    |     |         |              |
     |created_time|timestamp   |NO    |     |         |              |
     |status      |varchar(10) |NO    |     |         |              |
 
@@ -70,7 +70,7 @@
     | Field | Type       | Null | key | Deafult | Extra        |
     |:----- |:---------- |:-----|:----|:--------|:-------------|
     |id     |int(10)     |NO    |PRI  |         |auto_increment|
-    |name   |varchar(32) |NO    |     |         |              |
+    |name   |varchar(64) |NO    |     |         |              |
     |note   |varchar(128)|NO    |     |         |              |
     |status |varchar(10) |NO    |     |         |              |
 
